@@ -54,6 +54,10 @@ class ProjectMemberController extends Controller
         if ($user->id === $project->user_id) {
             return response()->json(['message' => 'The project creator cannot be removed.'], 403);
         }
+        
+        if ($project->tasks()->where('assigned_to', $user->id)->exists()) {
+            return response()->json(['message' => 'User cannot be removed as they have tasks assigned.'], 403);
+        }
 
         $project->members()->detach($user->id);
 

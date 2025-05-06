@@ -79,10 +79,9 @@ const ProjectMembers = () => {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(
-        `${API_BASE_URL}/projects/${id}/members/${userId}`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      await axios.delete(`${API_BASE_URL}/projects/${id}/members/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
       // Re-fetch after removal
       const headers = {
@@ -94,7 +93,11 @@ const ProjectMembers = () => {
       );
       setMembers(membersRes.data.members);
     } catch (err) {
-      alert("Failed to remove user.");
+      const errorMessage =
+        err.response?.data?.message ||
+        err.response?.data?.error ||
+        "Failed to remove user.";
+      alert(errorMessage);
     }
   };
 
