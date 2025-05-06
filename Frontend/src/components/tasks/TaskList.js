@@ -164,7 +164,7 @@ const TaskList = () => {
                         View
                       </Link>
 
-                      {user && project && user.id === project.owner_id && (
+                      {user && project && user.id === project.user_id && (
                         <>
                           <Link
                             to={`/tasks/${task.id}/edit`}
