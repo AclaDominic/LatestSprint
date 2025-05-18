@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { API_BASE_URL } from "./api"; // Adjust the import path as necessary
+import { API_BASE_URL } from "./api";
 import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
