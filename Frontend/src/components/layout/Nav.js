@@ -54,7 +54,7 @@ const Navigation = ({ user, onLogout }) => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            {/* Left links */}
+            {/* LEFT SIDE NAV LINKS */}
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
                 <Link
@@ -78,50 +78,32 @@ const Navigation = ({ user, onLogout }) => {
               </li>
             </ul>
 
-            {/* Right side items */}
-            <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    location.pathname === "/" ? "active" : ""
-                  }`}
-                  to="/"
-                >
-                  Dashboard
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    location.pathname.includes("/projects") ? "active" : ""
-                  }`}
-                  to="/projects"
-                >
-                  Projects
-                </Link>
-              </li>
-            </ul>
-
-            {/* RIGHT SIDE - STACKED IN MOBILE, INLINE IN DESKTOP */}
-            <div className="d-lg-flex ms-lg-auto w-100 w-lg-auto text-end flex-column flex-lg-row align-items-start align-items-lg-center gap-2 mt-3 mt-lg-0">
-              <button
-                className="btn btn-outline-light btn-sm position-relative"
-                onClick={toggleModal}
-              >
-                <Bell />
-                {hasNew && (
-                  <span className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-                )}
-              </button>
-              <span className="text-white">
-                Welcome, <strong>{user?.name || "User"}</strong>
-              </span>
-              <button
-                onClick={onLogout}
-                className="btn btn-outline-light btn-sm"
-              >
-                Logout
-              </button>
+            {/* RIGHT SIDE ACTIONS */}
+            <div className="ms-lg-auto w-100 w-lg-auto">
+              <div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-end gap-2 text-white mt-3 mt-lg-0">
+                <div className="position-relative">
+                  <button
+                    className="btn btn-outline-light btn-sm position-relative"
+                    onClick={toggleModal}
+                  >
+                    <Bell />
+                    {hasNew && (
+                      <span className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                    )}
+                  </button>
+                </div>
+                <div>
+                  Welcome, <strong>{user?.name || "User"}</strong>
+                </div>
+                <div>
+                  <button
+                    onClick={onLogout}
+                    className="btn btn-outline-light btn-sm"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
