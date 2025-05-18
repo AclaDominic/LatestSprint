@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { API_BASE_URL } from "../api"; // Adjust the import path as necessary
+import { API_BASE_URL } from "../api"; 
 import axios from "axios";
 
 const ProjectForm = () => {
