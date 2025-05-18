@@ -65,7 +65,7 @@ const Navigation = ({ user, onLogout }) => {
                   {hasNew && <span className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>}
                 </button>
               </div>
-              <span className="fw-light">Welcome, <strong>{user?.name}</strong></span>
+              <span className="fw-light">Welcome, <strong>{user?.name || 'User'}</strong></span>
               <button onClick={onLogout} className="btn btn-outline-light btn-sm">Logout</button>
             </div>
           </div>
