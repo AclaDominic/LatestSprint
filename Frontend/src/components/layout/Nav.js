@@ -43,7 +43,7 @@ const Navigation = ({ user, onLogout }) => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div className="container-fluid">
-          <Link className="navbar-brand fw-bold" to="/">Kuya Koy's PMS</Link>
+          <Link className="navbar-brand fw-bold" to="/">Klick Inc. PMS</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
