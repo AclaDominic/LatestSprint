@@ -31,6 +31,9 @@ class DatabaseSeeder extends Seeder
         Project::factory(rand(2, 3))->create([
             'user_id' => $admin->id,
         ])->each(function ($project) use ($admin, $teamMembers) {
+            // assign admin as a member of this project
+            $project->members()->attach($admin->id);
+
             // Attach 3 random members to this project
             $assignedMembers = $teamMembers->random(3);
             $project->members()->attach($assignedMembers->pluck('id')->toArray());
